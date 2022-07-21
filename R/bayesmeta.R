@@ -1,6 +1,6 @@
 
 ###function to carry out bayes meta analysis
-bayesmeta<-function( penet ,  RR_studies=T, RR ,OR_studies=T, OR , ages=20:85, zero_studies=T, zero_OR ,pl=T ,ylim=c(0,1),xlim=c(min(ages),max(ages)))
+bayesmeta<-function( penet ,  RR_studies=T, RR ,OR_studies=T, OR , ages=20:85, zero_studies=T, zero_OR ,pl=F ,ylim=c(0,1),xlim=c(min(ages),max(ages)))
 {
 
  if(max(ages)>85)
