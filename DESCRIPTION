@@ -1,0 +1,14 @@
+Package: bayesmeta
+Type: Package
+Title: Bayesian Meta Analysis to estimate age specific penetrance of getting cancer due to pathogenic variants
+Version: 1.0
+Date: 2022-07-20
+Author: Thanthirige Lakshika Maduwanthi Ruberu
+Maintainer:Thanthirige Lakshika Maduwanthi Ruberu <lakshikaruberu@gmail.com>
+Description: Estimate meta-analytic age-specific risk of getting cancer (penetrance) by combining information from studies reporting age-specific penetrance, relative risk(RR), standard incidence ratio (SIR), and odds ratio (OR).
+Depends: R (>= 3.6.0)
+License: GPL-2
+Imports: mvtnorm, coda , rlist, Rcpp
+LinkingTo: Rcpp
+
+
