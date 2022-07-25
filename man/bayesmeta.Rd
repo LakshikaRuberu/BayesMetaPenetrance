@@ -6,7 +6,8 @@
 \code{bayesmeta} is used to estimate meta-analytic age-specific risk of getting cancer (penetrance) by combining information from studies reporting age-specific penetrance, relative risk(RR), standard incidence ratio (SIR), and odds ratio (OR). This function gives the age-specific penetrance at each specified age up to age 85.
 }
 \usage{
-bayesmeta(penet,RR_studies=T,RR,OR_studies=T,OR,ages=20:85,zero_studies=T,zero_OR,pl=F ,ylim=c(0,1),xlim=c(min(ages),max(ages)))
+bayesmeta(penet,RR_studies=T,RR,OR_studies=T,OR,ages=20:85,zero_studies=T,zero_OR,pl=F ,
+          ylim=c(0,1),xlim=c(20,85))
 }
 \arguments{
   \item{penet}{
@@ -86,7 +87,7 @@ bayesmeta(penet,RR_studies=T,RR,OR_studies=T,OR,ages=20:85,zero_studies=T,zero_O
   If pl=TRUE, numeric vector of length 2, giving the y coordinates. Default is c(0,1).
   }
   \item{xlim}{
-  If pl=TRUE, numeric vector of length 2, giving the x coordinates. Default is c(min(\code{ages}),max(\code{ages})).
+  If pl=TRUE, numeric vector of length 2, giving the x coordinates. Default is c(20,85).
   }
 }
 \details{
@@ -194,7 +195,7 @@ colnames(zero_OR)=c("carrier.cases","non_carrier.cases","non_carrier.controls",
 
 set.seed(123)
 bayesmeta(penet,RR_studies=TRUE,RR=RR,OR_studies=TRUE,OR=OR,ages=20:85,
-        zero_studies=TRUE,zero_OR=zero_OR,pl=T ,ylim=c(0,1),xlim=c(min(ages),max(ages)))
+        zero_studies=TRUE,zero_OR=zero_OR,pl=TRUE ,ylim=c(0,1),xlim=c(20,85))
 
 }
 

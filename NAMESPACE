@@ -1,8 +1,7 @@
 exportPattern("^[[:alpha:]]+")
-import(dplyr, dplyr, mvtnorm, coda, rlist,Rcpp)
+import(dplyr, mvtnorm, coda, rlist,Rcpp)
 importFrom("stats", "cov", "dgamma", "dnorm", "dunif", "dweibull",
                "integrate", "pnorm", "pweibull", "quantile", "rbinom",
                "rgamma", "rnorm", "runif")
 importFrom("graphics", "legend", "lines")
-importFrom("stats", "lag")
 useDynLib(bayesmeta, .registration = TRUE)
