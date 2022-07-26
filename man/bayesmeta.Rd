@@ -13,7 +13,7 @@ bayesmeta(penet,RR_studies=T,RR,OR_studies=T,OR,ages=20:85,zero_studies=T,zero_O
   \item{penet}{
   A data frame containing information for studies reporting age-specific penetrance with following columns:
   \tabular{rl}{
-  \bold{\emph{study_label}}\tab label identify the set of penetrance values from a single study. E.g, all the age specific penetrance values corresponding to first study should have 1 as the study label \cr
+  \bold{\emph{study_label}}\tab label identify the set of penetrance values from a single study.\cr
   \bold{\emph{penetrance}}\tab age-specific penetrance value \cr
   \bold{\emph{penet_ci_lower}}\tab lower 95\% confidence limit \cr
   \bold{\emph{penet_ci_upper}}\tab upper 95\% confidence limit \cr
@@ -24,57 +24,55 @@ bayesmeta(penet,RR_studies=T,RR,OR_studies=T,OR,ages=20:85,zero_studies=T,zero_O
   A logical variable to indicate whether studies reporting RR or SIR are included in the meta analysis. Default is TRUE.
   }
   \item{RR}{
-   If \code{RR_studies} is TRUE, a data frame containing information for all RR and SIR studies with following columns where each row corresponding to a single study:
+   If \code{RR_studies} is TRUE, a data frame containing information for all RR and SIR studies with following columns where each row corresponding to a single study: for studies that do not provide age-related summaries or if age related column note   provided, default values will be used
   \tabular{rl}{
   \bold{\emph{R.est}}\tab reported RR/SIR value \cr
   \bold{\emph{RR.ci.lower}}\tab lower 95\% confidence limit \cr
   \bold{\emph{RR.ci.upper}}\tab upper 95\% confidence limit \cr
-  \bold{\emph{A}}\tab mean age of onset for carriers. Leave NA for studies that do not report. A deafult value of 63 will be used for NA values and if column is not provided. \cr
-  \bold{\emph{V}}\tab  sd of age of onset for carriers. Leave NA for studies that do not report. A deafult value of 14.00726 will be used for NA values and if column is not provided. \cr
-  \bold{\emph{A.lo}}\tab lowest age of among for carriers.  Leave NA for studies that do not report. A deafult value of 20 will be used for NA values and if column is not provided. \cr \cr
-  \bold{\emph{A.hi}}\tab highest age of among for carriers.  Leave NA for studies that do not report. A deafult value of 95 will be used for NA values and if column is not provided. \cr
-  \bold{\emph{A0}}\tab mean age of onset for non-carriers. Leave NA for studies that do not report. A deafult value of 63 will be used for NA values and if column is not provided. \cr
-  \bold{\emph{V0}}\tab sd of age of onset for non-carriers.  Leave NA for studies that do not report. A deafult value of 20 will be used for NA values and if column is not provided. \cr
-  \bold{\emph{A0.lo}}\tab lowest age of onset for non-carriers.  Leave NA for studies that do not report. A deafult value of 20 will be used for NA values and if column is not provided. \cr
-  \bold{\emph{A0.hi}}\tab highest age of onset for non-carriers.  Leave NA for studies that do not report. A deafult value of 95 will be used for NA values and if column is not provided.
+  \bold{\emph{A}}\tab mean age of onset for carriers. Default is 63. \cr
+  \bold{\emph{V}}\tab  sd of age of onset for carriers. Default is 14.00726.  \cr
+  \bold{\emph{A.lo}}\tab lowest age of among for carriers. Default is 20.   \cr \cr
+  \bold{\emph{A.hi}}\tab highest age of among for carriers. Default is 95.  \cr
+  \bold{\emph{A0}}\tab mean age of onset for non-carriers. Default is 63.  \cr
+  \bold{\emph{V0}}\tab sd of age of onset for non-carriers. Default is 14.00726.   \cr
+  \bold{\emph{A0.lo}}\tab lowest age of onset for non-carriers. Default is 20.   \cr
+  \bold{\emph{A0.hi}}\tab highest age of onset for non-carriers. Default is 95.
    }
   }
   \item{OR_studies}{
   A logical variable to indicate whether studies reporting OR are included in the meta analysis. Default is TRUE.
   }
    \item{OR}{
-   If \code{OR_studies} is TRUE, a data frame containing information for all OR studies with following columns with each row corresponding to a single study:
+   If \code{OR_studies} is TRUE, a data frame containing information for all OR studies with following columns with each row corresponding to a single study: for studies that do not provide age-related summaries or if age related column note provided, default values will be used
   \tabular{rl}{
   \bold{\emph{OR.est}}\tab reported OR value \cr
   \bold{\emph{OR.ci.lower}}\tab lower 95\% confidence limit \cr
   \bold{\emph{OR.ci.upper}}\tab upper 95\% confidence limit \cr
-  \bold{\emph{A}}\tab mean age of onset for cases. Leave NA for studies that do not report. A default value of 63 will be used for NA values and if column is not provided. \cr
-  \bold{\emph{V}}\tab  SD of age of onset for cases. Leave NA for studies that do not report. A default value of 14.00726 will be used for NA values and if column is not provided. \cr
-  \bold{\emph{A.lo}}\tab Lowest age of onset among cases.  Leave NA for studies that do not report. A default value of 20 will be used for NA values and if column is not provided. \cr \cr
-  \bold{\emph{A.hi}}\tab Highest age of onset among cases.  Leave NA for studies that do not report. A default value of 95 will be used for NA values and if column is not provided. \cr
-  \bold{\emph{A0}}\tab mean age of controls( at study inclusion). Leave NA for studies that do not report. A default value of 63 will be used for NA values and if column is not provided. \cr
-  \bold{\emph{V0}}\tab SD of  age of controls( at study inclusion).  Leave NA for studies that do not report. A default value of 20 will be used for NA values and if column is not provided. \cr
-  \bold{\emph{A0.lo}}\tab Lowest  age of controls( at study inclusion).  Leave NA for studies that do not report. A default value of 20 will be used for NA values and if column is not provided. \cr
-  \bold{\emph{A0.hi}}\tab Highest  age of controls( at study inclusion).  Leave NA for studies that do not report. A default value of 95 will be used for NA values and if column is not provided.
+  \bold{\emph{A}}\tab mean age of onset for cases. Default is 63.  \cr
+  \bold{\emph{V}}\tab  SD of age of onset for cases. Default is 14.00726.\cr
+  \bold{\emph{A.lo}}\tab Lowest age of onset among cases. Default is 20.  \cr
+  \bold{\emph{A.hi}}\tab Highest age of onset among cases. Default is 95.  \cr
+  \bold{\emph{A0}}\tab mean age of controls( at study inclusion). Default is value A\cr
+  \bold{\emph{V0}}\tab SD of  age of controls( at study inclusion). Default is value V \cr
+  \bold{\emph{A0.lo}}\tab Lowest  age of controls( at study inclusion). Default is value A.lo\cr
+  \bold{\emph{A0.hi}}\tab Highest  age of controls( at study inclusion). Default is value A.hi
    }
   }
   \item{zero_studies}{
   A logical variable to indicate whether information from case control studies where no mutations were detected in controls are included in the meta analysis. Default if TRUE.
   }
   \item{zero_OR}{
-   If \code{zero_studies} is TRUE, a data frame containing information for such studies with following columns with each row corresponding to a single study:
+   If \code{zero_studies} is TRUE, a data frame containing information for such studies with following columns with each row corresponding to a single study: for studies that do not provide age-related summaries or if age related column note provided, default values will be used
   \tabular{rl}{
   \bold{\emph{carrier.cases}}\tab number of carrier cases. \cr
   \bold{\emph{non_carrier.cases}}\tab  number of non-carrier cases. \cr
   \bold{\emph{non_carrier.controls}}\tab  number of non-carrier controls. \cr
-  \bold{\emph{A}}\tab mean age of onset for cases. Leave NA for studies that do not report. A default value of 63 will be used for NA values and if column is not provided. \cr
-  \bold{\emph{V}}\tab  SD of age of onset for cases. Leave NA for studies that do not report. A default value of 14.00726 will be used for NA values and if column is not provided. \cr
-  \bold{\emph{A.lo}}\tab Lowest age of onset among cases.  Leave NA for studies that do not report. A default value of 20 will be used for NA values and if column is not provided. \cr \cr
-  \bold{\emph{A.hi}}\tab Highest age of onset among cases.  Leave NA for studies that do not report. A default value of 95 will be used for NA values and if column is not provided. \cr
-  \bold{\emph{A0}}\tab mean age of controls( at study inclusion). Leave NA for studies that do not report. The corresponding value of A column will be used for NA values and if column is not provided. \cr
-  \bold{\emph{V0}}\tab SD of  age of controls( at study inclusion).  Leave NA for studies that do not report. The corresponding value of V column will be used for NA values and if column is not provided. \cr
-  \bold{\emph{A0.lo}}\tab Lowest  age of controls( at study inclusion).  Leave NA for studies that do not report. The corresponding value of A.lo column will be used NA values and if column is not provided. \cr
-  \bold{\emph{A0.hi}}\tab Highest  age of controls( at study inclusion).  Leave NA for studies that do not report. The corresponding value of A.hi column will be used for NA values and if column is not provided.
+ \bold{\emph{A.lo}}\tab Lowest age of onset among cases. Default is 20.  \cr
+  \bold{\emph{A.hi}}\tab Highest age of onset among cases. Default is 95.  \cr
+  \bold{\emph{A0}}\tab mean age of controls( at study inclusion). Default is value A\cr
+  \bold{\emph{V0}}\tab SD of  age of controls( at study inclusion). Default is value V \cr
+  \bold{\emph{A0.lo}}\tab Lowest  age of controls( at study inclusion). Default is value A.lo\cr
+  \bold{\emph{A0.hi}}\tab Highest  age of controls( at study inclusion). Default is value A.hi
    }
   }
   \item{ages}{
