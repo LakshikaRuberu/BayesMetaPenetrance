@@ -692,16 +692,16 @@ bayesmeta<-function( penet ,  RR_studies=T, RR ,OR_studies=T, OR , ages=20:85, z
 
     penet.ci<-apply(penet,2,quantile, probs=c(0.025, 0.975)) #Take 0.025 and 0.975 quantile as confidence interval limits
 
-    penet.ci_hpd_95=t(data.frame(HPDinterval(mcmc(penet), prob = 0.95))) #compute 95% HPD credible interval
+
 
 
     result<-vector("list", length = 2) #preparing the output as a list
     result[[1]]<-penet.est
     result[[2]]<-penet.ci
-    result[[3]]<-penet.ci_hpd_95
 
 
-    names(result)<-c("penetrance", "penetrance_CI", "penetrance_HPD.CI")
+
+    names(result)<-c("penetrance", "penetrance_CI")
     return(result)
   }
 
