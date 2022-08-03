@@ -3,7 +3,7 @@
 \alias{BayesMeta}
 \title{Estimates consensus age-specific penetrance of cancer for carriers of a pathogenic gene mutation}
 \description{
-\code{bayesmeta} is used to estimate meta-analytic age-specific risk of getting cancer (penetrance) for carriers of pathogenic variants of a particular gene. Information from studies reporting different types of risk measuers on a given gene (e.g., age-specific penetrance, relative risk(RR), standard incidence ratio (SIR), and odds ratio (OR)) are integrated to give the age-specific penetrance for carriers at each specified age up to age 85.
+\code{bayesmeta} is used to estimate meta-analytic age-specific risk of getting cancer (penetrance) for carriers of pathogenic variants of a specific gene. Information from studies reporting different types of risk measuers on that gene (e.g., age-specific penetrance, relative risk(RR), standard incidence ratio (SIR), and odds ratio (OR)) are integrated to give the age-specific penetrance for carriers at each specified age up to age 85.
 }
 \usage{
 bayesmeta(penet,RR_studies=T,RR,OR_studies=T,OR,ages=20:85,zero_studies=T,zero_OR,pl=F ,
@@ -31,12 +31,12 @@ bayesmeta(penet,RR_studies=T,RR,OR_studies=T,OR,ages=20:85,zero_studies=T,zero_O
   \bold{\emph{RR.ci.upper}}\tab upper 95\% confidence limit. \cr
   \bold{\emph{A}}\tab mean age of onset for carriers. Default is 63. \cr
   \bold{\emph{V}}\tab  sd of age of onset for carriers. Default is 14.00726.  \cr
-  \bold{\emph{A.lo}}\tab lowest age of among for carriers. Default is 20.   \cr
-  \bold{\emph{A.hi}}\tab highest age of among for carriers. Default is 95.  \cr
+  \bold{\emph{A.lo}}\tab minimum age of among for carriers. Default is 20.   \cr
+  \bold{\emph{A.hi}}\tab maximum age of among for carriers. Default is 95.  \cr
   \bold{\emph{A0}}\tab mean age of onset for non-carriers. Default is 63.  \cr
   \bold{\emph{V0}}\tab sd of age of onset for non-carriers. Default is 14.00726.   \cr
-  \bold{\emph{A0.lo}}\tab lowest age of onset for non-carriers. Default is 20.   \cr
-  \bold{\emph{A0.hi}}\tab highest age of onset for non-carriers. Default is 95.
+  \bold{\emph{A0.lo}}\tab minimum age of onset for non-carriers. Default is 20.   \cr
+  \bold{\emph{A0.hi}}\tab maximum age of onset for non-carriers. Default is 95.
    }
   }
   \item{OR_studies}{
@@ -49,13 +49,13 @@ bayesmeta(penet,RR_studies=T,RR,OR_studies=T,OR,ages=20:85,zero_studies=T,zero_O
   \bold{\emph{OR.ci.lower}}\tab lower 95\% confidence limit. \cr
   \bold{\emph{OR.ci.upper}}\tab upper 95\% confidence limit. \cr
   \bold{\emph{A}}\tab mean age of onset for cases. Default is 63.  \cr
-  \bold{\emph{V}}\tab  SD of age of onset for cases. Default is 14.00726.\cr
-  \bold{\emph{A.lo}}\tab Lowest age of onset among cases. Default is 20.  \cr
-  \bold{\emph{A.hi}}\tab Highest age of onset among cases. Default is 95.  \cr
+  \bold{\emph{V}}\tab  sd of age of onset for cases. Default is 14.00726.\cr
+  \bold{\emph{A.lo}}\tab minimum age of onset among cases. Default is 20.  \cr
+  \bold{\emph{A.hi}}\tab maximum age of onset among cases. Default is 95.  \cr
   \bold{\emph{A0}}\tab mean age of controls (at study inclusion). Default is value A.\cr
-  \bold{\emph{V0}}\tab SD of  age of controls (at study inclusion). Default is value V. \cr
-  \bold{\emph{A0.lo}}\tab Lowest  age of controls (at study inclusion). Default is value A.lo.\cr
-  \bold{\emph{A0.hi}}\tab Highest  age of controls (at study inclusion). Default is value A.hi.
+  \bold{\emph{V0}}\tab sd of  age of controls (at study inclusion). Default is value V. \cr
+  \bold{\emph{A0.lo}}\tab minimum  age of controls (at study inclusion). Default is value A.lo.\cr
+  \bold{\emph{A0.hi}}\tab maximum  age of controls (at study inclusion). Default is value A.hi.
    }
   }
   \item{zero_studies}{
@@ -67,12 +67,12 @@ bayesmeta(penet,RR_studies=T,RR,OR_studies=T,OR,ages=20:85,zero_studies=T,zero_O
   \bold{\emph{carrier.cases}}\tab number of carrier cases. \cr
   \bold{\emph{non_carrier.cases}}\tab  number of non-carrier cases. \cr
   \bold{\emph{non_carrier.controls}}\tab  number of non-carrier controls. \cr
- \bold{\emph{A.lo}}\tab Lowest age of onset among cases. Default is 20.  \cr
-  \bold{\emph{A.hi}}\tab Highest age of onset among cases. Default is 95.  \cr
+ \bold{\emph{A.lo}}\tab minimum age of onset among cases. Default is 20.  \cr
+  \bold{\emph{A.hi}}\tab maximum age of onset among cases. Default is 95.  \cr
   \bold{\emph{A0}}\tab mean age of controls (at study inclusion). Default is value A.\cr
-  \bold{\emph{V0}}\tab SD of  age of controls (at study inclusion). Default is value V. \cr
-  \bold{\emph{A0.lo}}\tab Lowest  age of controls (at study inclusion). Default is value A.lo.\cr
-  \bold{\emph{A0.hi}}\tab Highest  age of controls (at study inclusion). Default is value A.hi.
+  \bold{\emph{V0}}\tab sd of  age of controls (at study inclusion). Default is value V. \cr
+  \bold{\emph{A0.lo}}\tab minimum  age of controls (at study inclusion). Default is value A.lo.\cr
+  \bold{\emph{A0.hi}}\tab maximum  age of controls (at study inclusion). Default is value A.hi.
    }
   }
   \item{ages}{
@@ -101,14 +101,14 @@ The prior distributions are \eqn{\pi(\kappa_s|a, b) =} Gamma\eqn{(a, b), \;  \pi
 
 Continuous uniform distributions are assumed for all the hyper-parameters. Specifically, \eqn{\pi(a|l_a, u_a) =} U\eqn{(l_a, u_a), \; \pi(b|l_b, u_b) =} U\eqn{(l_b, u_b), \;  \pi(c|l_c, u_c) =} U\eqn{(l_c, u_c), \;} and \eqn{ \; \pi(d|l_d, u_d) =} U\eqn{(l_d, u_d)} with \eqn{l_a, u_a,l_a, u_a,l_a, u_a,l_a, u_a} pre-specified.
 
-Posterior distributions are obtained via a Markov chain Monte Carlo algorithm, that employ a Metropolis-Hastings algorithm within Gibbs sampling. The default values for age distributions are based on the distribution of age of onset of breast cancer for US general population (https://seer.canc\cr er.gov/statfacts/html/breast.html). Confidence interval at a given age is the \eqn{0.025^{th}} and \eqn{0.0975^{th}} quantiles of the posterior dstribution of penetrance estimate at that age.
+Posterior distributions are obtained via a Markov chain Monte Carlo algorithm, that employ a Metropolis-Hastings algorithm within Gibbs sampling. The default values for age distributions are based on the distribution of age of onset of breast cancer for US general population (https://seer.canc\cr er.gov/statfacts/html/breast.html). Credible interval at a given age is the \eqn{0.025^{th}} and \eqn{0.0975^{th}} quantiles of the posterior dstribution of penetrance estimate at that age.
 }
-\value{\code{bayesmeta} returns a list of three objects--- the estimated penetrance values , confidence Interval(using quantiles of the posterior distribution) and the \eqn{95\%} highest posterior density credible interval
+\value{\code{bayesmeta} returns a list of two objects--- the estimated penetrance values and \eqn{95\%} credible interval.
 \item{penetrance}{Estimated age-specif penetrance values}
  \item{penetrance_CI}{Credible interval}
 }
 \references{
-1. Ruberu, T. L. M, Braun, D, Parmigiani, G. and Biswas, S. Bayesian Meta-Analysis of Penetrance and its Application to Breast Cancer Risk among ATM Mutation Carriers. (Manuscript)
+1. Ruberu, T. L. M, Braun, D, Parmigiani, G. and Biswas, S. Bayesian Meta-Analysis of Penetrance and its Application to Breast Cancer Risk among ATM Mutation Carriers. (Manuscript) \cr
 2. Marabelli, M., Cheng, S. C., and Parmigiani, G. (2016). Penetrance of ATM Gene Mutations in Breast Cancer: A Meta-Analysis of Different Measures of Risk. Genetic Epidemiology, 40, 425-431.
 }
 \author{
