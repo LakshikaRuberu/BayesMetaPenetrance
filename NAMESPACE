@@ -1,5 +1,5 @@
 exportPattern("^[[:alpha:]]+")
-importFrom(dplyr, mvtnorm, rlist, Rcpp)
+import(dplyr, mvtnorm, rlist, Rcpp)
 importFrom("stats", "cov", "dgamma", "dnorm", "dunif", "dweibull",
                "integrate", "pnorm", "pweibull", "quantile", "rbinom",
                "rgamma", "rnorm", "runif")
