@@ -7,7 +7,7 @@ Author: Thanthirige Lakshika Maduwanthi Ruberu
 Maintainer:Thanthirige Lakshika Maduwanthi Ruberu <lakshikaruberu@gmail.com>
 Description: Estimate meta-analytic age-specific risk of getting cancer (penetrance) due to pathogenic variants of a given gene by integrating information from studies reporting different
              types of risk measures on that particular gene. These risk measures include  age-specific penetrance, relative risk(RR), standard incidence ratio (SIR), and odds ratio (OR) .
-Depends: R (>= 3.6.0), mvtnorm (>= 1.1-3) , rlist (>= 0.4) , Rcpp (>= 1.0.8)
+Depends: R (>= 3.6.0), mvtnorm (>= 1.1-3) , rlist (>= 0.4.6.2) , Rcpp (>= 1.0.9)
 License: GPL-2
 LinkingTo: Rcpp
-Imports: dplyr (>= 1.0.0)
+Imports: dplyr (>= 1.0.9)
