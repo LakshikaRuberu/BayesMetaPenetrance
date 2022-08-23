@@ -8,3 +8,8 @@ The preferred way to install this package is through devtools:
 ```r
 devtools::install_github("LakshikaRuberu/bayesmeta")
 ```
+
+# Documentation
+
+The manual for this package can be found at [here](https://utdallas.app.box.com/file/1000257154568)
+
