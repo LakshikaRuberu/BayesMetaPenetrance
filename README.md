@@ -11,5 +11,5 @@ devtools::install_github("LakshikaRuberu/bayesmeta")
 
 # Documentation
 
-The manual for this package can be found at [here](https://utdallas.app.box.com/file/1000257154568)
+The manual for this package can be found at
 
