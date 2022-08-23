@@ -11,5 +11,5 @@ devtools::install_github("LakshikaRuberu/bayesmeta")
 
 # Documentation
 
-The manual for this package can be found at [here](https://github.com/LakshikaRuberu/bayesmeta/main/bayesmeta-manual.pdf)
+The manual for this package can be found at [here](https://github.com/LakshikaRuberu/bayesmeta/blob/main/bayesmeta-manual.pdf)
 
