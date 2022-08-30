@@ -2,6 +2,6 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 .get_viable_matrix <- function(input_matrix) {
-    .Call(`_bayesmeta_get_viable_matrix`, input_matrix)
+    .Call(`_BayesMeta_get_viable_matrix`, input_matrix)
 }
 

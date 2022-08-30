@@ -1,4 +1,4 @@
-Package: bayesmeta
+Package: BayesMeta
 Type: Package
 Title: Bayesian Meta Analysis to estimate age-specific penetrance of getting cancer due to pathogenic variants of a given gene
 Version: 1.0

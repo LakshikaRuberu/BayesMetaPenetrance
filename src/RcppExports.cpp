@@ -12,7 +12,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // get_viable_matrix
 NumericMatrix get_viable_matrix(NumericMatrix input_matrix);
-RcppExport SEXP _bayesmeta_get_viable_matrix(SEXP input_matrixSEXP) {
+RcppExport SEXP _BayesMeta_get_viable_matrix(SEXP input_matrixSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -23,11 +23,11 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_bayesmeta_get_viable_matrix", (DL_FUNC) &_bayesmeta_get_viable_matrix, 1},
+    {"_BayesMeta_get_viable_matrix", (DL_FUNC) &_BayesMeta_get_viable_matrix, 1},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_bayesmeta(DllInfo *dll) {
+RcppExport void R_init_BayesMeta(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }

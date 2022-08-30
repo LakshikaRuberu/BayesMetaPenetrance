@@ -1,9 +1,9 @@
-\name{bayesmeta}
+\name{BayesMeta}
 \alias{bayesmeta}
-\alias{BayesMeta}
+\alias{bayesmeta}
 \title{Estimates consensus age-specific penetrance of cancer for carriers of a pathogenic gene mutation}
 \description{
-\code{bayesmeta} is used to estimate meta-analytic age-specific risk of getting cancer (penetrance) for carriers of pathogenic variants of a specific gene. Information from studies reporting different types of risk measuers on that gene (e.g., age-specific penetrance, relative risk(RR), standard incidence ratio (SIR), and odds ratio (OR)) are integrated to give the age-specific penetrance for carriers at each specified age up to age 85.
+\code{BayesMeta} is used to estimate meta-analytic age-specific risk of getting cancer (penetrance) for carriers of pathogenic variants of a specific gene. Information from studies reporting different types of risk measuers on that gene (e.g., age-specific penetrance, relative risk(RR), standard incidence ratio (SIR), and odds ratio (OR)) are integrated to give the age-specific penetrance for carriers at each specified age up to age 85.
 }
 \usage{
 bayesmeta(penet,RR_studies=T,RR,OR_studies=T,OR,ages=20:85,zero_studies=T,zero_OR,pl=F ,
