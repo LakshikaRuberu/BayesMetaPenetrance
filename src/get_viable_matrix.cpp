@@ -11,14 +11,7 @@ NumericMatrix get_viable_matrix(NumericMatrix input_matrix){
   //Its meant to hold 1 for rows satisfying the underlying condition
   // of x > x++ 
   
- NumericMatrix get_viable_matrix(
-          NumericMatrix input_matrix){
-   
-   int num_of_rows=input_matrix.nrow();
-   int num_of_cols=input_matrix.ncol();     
-  // Create a column matrix with all zeros
-  //Its meant to hold 1 for rows satisfying the underlying condition
-  // of x > x++ 
+ 
   
   NumericMatrix viable_rows( num_of_rows  ,1);
   
