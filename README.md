@@ -11,5 +11,5 @@ devtools::install_github("LakshikaRuberu/BayesMetaPenetrance")
 
 # Documentation
 
-The manual for this package can be found at [here](https://github.com/LakshikaRuberu/BayesMeta/blob/main/bayesmeta-manual.pdf)
+The manual for this package can be found at [here](https://github.com/LakshikaRuberu/BayesMetaPenetrance/blob/main/BayesMetaPenetrance_1.0.pdf)
 
