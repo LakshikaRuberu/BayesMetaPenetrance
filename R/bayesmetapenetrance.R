@@ -1,6 +1,6 @@
 
 ###function to carry out bayes meta analysis
-BayesMeta<-function( penet ,  RR_studies=T, RR ,OR_studies=T, OR , ages=20:85, zero_studies=T, zero_OR ,pl=F ,ylim=c(0,1),xlim=c(20,85))
+BayesMetaPenetrance<-function( penet ,  RR_studies=T, RR ,OR_studies=T, OR , ages=seq(40,80,10), zero_studies=T, zero_OR ,CrI=F,pl=T ,ylim=c(0,1),xlim=c(20,85))
 {
 
  if(max(ages)>85)
@@ -695,14 +695,18 @@ BayesMeta<-function( penet ,  RR_studies=T, RR ,OR_studies=T, OR , ages=20:85, z
 
 
 
-    result<-vector("list", length = 2) #preparing the output as a list
-    result[[1]]<-penet.est
-    result[[2]]<-penet.ci
+    result<-vector("list", length = 3) #preparing the output as a list
+    result[[1]]<-ages
+    result[[2]]<-penet.est
+    result[[3]]<-penet.ci
 
 
 
-    names(result)<-c("penetrance", "penetrance_CI")
+    names(result)<-c('Ages',"penetrance", "penetrance_CI")
+
     return(result)
+
+
   }
 
 
@@ -1217,8 +1221,8 @@ if(pl)
 lines(x=ages, y= penetrance_lower,col='Orange',lwd=3,lty=2)
   lines(x=ages, y= penetrance_upper,col='Orange',lwd=3,lty=2)
 }
+ifelse(CrI==F, return(result_correct[1:2]),return(result_correct))
 
-return(result_correct)
 }
 
 
