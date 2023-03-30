@@ -1,6 +1,6 @@
 
 ###function to carry out bayes meta analysis
-BayesMetaPenetrance<-function( penet ,  RR_studies=T, RR ,OR_studies=T, OR , ages=seq(40,80,10), zero_studies=T, zero_OR ,CrI=F,pl=T ,ylim=c(0,1),xlim=c(20,85))
+BayesMetaPenetrance<-function( penet ,  RR_studies=T, RR ,OR_studies=T, OR , ages=seq(40,80,10), zero_studies=T, zero_OR ,CrI=F,pl=T ,ylim=c(0,1),xlim=c(40,80))
 {
 
  if(max(ages)>85)
