@@ -1,9 +1,9 @@
 Package: BayesMetaPenetrance
 Type: Package
-Title: Bayesian Meta Analysis to estimate age-specific penetrance of getting cancer due to pathogenic variants of a given gene
+Title: Bayesian meta analysis to estimate age specific penetrance of getting cancer due to pathogenic variants of a given gene
 Version: 1.0
 Date: 2022-07-20
-Author: Thanthirige Lakshika Maduwanthi Ruberu
+Author: Thanthirige Lakshika Maduwanthi Ruberu, Swati Biswas
 Maintainer:Thanthirige Lakshika Maduwanthi Ruberu <lakshikaruberu@gmail.com>
 Description: Estimate meta-analytic age-specific risk of getting cancer (penetrance) due to pathogenic variants of a given gene by integrating information from studies reporting different
              types of risk measures on that particular gene. These risk measures include  age-specific penetrance, relative risk (RR), standard incidence ratio (SIR), and odds ratio (OR).
