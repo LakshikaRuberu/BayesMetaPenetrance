@@ -6,8 +6,8 @@
 \code{BayesMetaPenetrance} is used to estimate meta-analytic age-specific risk of getting cancer (penetrance) for carriers of pathogenic variants of a specific gene. Information from studies reporting different types of risk measuers on that gene (e.g., age-specific penetrance, relative risk(RR), standard incidence ratio (SIR), and odds ratio (OR)) are integrated to give the age-specific penetrance for carriers up to age 85.
 }
 \usage{
-BayesMetaPenetrance(penet,RR_studies=T,RR,OR_studies=T,OR,ages=seq(40,80,10),zero_studies=T,
-zero_OR,CrI=F,pl=T,ylim=c(0,1),xlim=c(20,85))
+BayesMetaPenetrance(penet,RR_studies=T,RR,OR_studies=T,OR,ages=seq(40,80,10),
+zero_studies=T,zero_OR,CrI=F,pl=T,ylim=c(0,1),xlim=c(40,80))
 }
 \arguments{
   \item{penet}{
@@ -88,7 +88,7 @@ zero_OR,CrI=F,pl=T,ylim=c(0,1),xlim=c(20,85))
   If pl=TRUE, numeric vector of length 2, giving the y coordinates. Default is c(0,1).
   }
   \item{xlim}{
-  If pl=TRUE, numeric vector of length 2, giving the x coordinates. Default is c(20,85).
+  If pl=TRUE, numeric vector of length 2, giving the x coordinates. Default is c(40,80).
   }
 }
 \details{
@@ -213,7 +213,7 @@ colnames(zero_OR)=c("carrier.cases","non_carrier.cases","non_carrier.controls",
 
 
 BayesMetaPenetrance(penet,RR_studies=TRUE,RR=RR,OR_studies=TRUE,OR=OR,ages=seq(40,80,10),
-zero_studies=TRUE,zero_OR=zero_OR,CrI=FALSE,pl=TRUE ,ylim=c(0,1),xlim=c(20,85))
+zero_studies=TRUE,zero_OR=zero_OR,CrI=FALSE,pl=TRUE ,ylim=c(0,1),xlim=c(40,80))
 
 }
 
