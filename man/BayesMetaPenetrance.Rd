@@ -212,9 +212,8 @@ colnames(zero_OR)=c("carrier.cases","non_carrier.cases","non_carrier.controls",
           "A","V","A.lo","A.hi","A0","V0","A0.lo","A0.hi")
 
 
-BayesMetaPenetrance(penet,RR_studies=TRUE,RR=RR,OR_studies=TRUE,OR=OR,ages=seq(40,80,10),
-zero_studies=TRUE,zero_OR=zero_OR,CrI=FALSE,pl=TRUE ,ylim=c(0,1),xlim=c(40,80))
-
+BayesMetaPenetrance(penet,RR_studies=T,RR=RR,OR_studies=T,OR=OR,ages=seq(40,80,10),
+zero_studies=T,zero_OR=zero_OR,CrI=F,pl=T,ylim=c(0,1),xlim=c(40,80))
 }
 
 
