@@ -1,6 +1,7 @@
 Package: BayesMetaPenetrance
 Type: Package
-Title: Bayesian meta analysis to estimate age specific penetrance of getting cancer due to pathogenic variants of a given gene
+Title: Bayesian meta-analysis to estimate age-specific penetrance of getting cancer 
+       due to pathogenic variants of a given gene
 Version: 1.0
 Date: 2022-07-20
 Author: Thanthirige Lakshika Maduwanthi Ruberu, Swati Biswas
