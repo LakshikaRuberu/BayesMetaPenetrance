@@ -104,14 +104,15 @@ The prior distributions are \eqn{\pi(\kappa_s|a, b) =} Gamma\eqn{(a, b), \;  \pi
 
 Continuous uniform distributions are assumed for all the hyper-parameters. Specifically, \eqn{\pi(a|l_a, u_a) =} U\eqn{(l_a, u_a), \; \pi(b|l_b, u_b) =} U\eqn{(l_b, u_b), \;  \pi(c|l_c, u_c) =} U\eqn{(l_c, u_c), \;} and \eqn{ \; \pi(d|l_d, u_d) =} U\eqn{(l_d, u_d)} with \eqn{l_a, u_a,l_a, u_a,l_a, u_a,l_a, u_a} pre-specified.
 
-Posterior distributions are obtained via a Markov chain Monte Carlo algorithm. The default values for age distributions are based on the distribution of age of onset of breast cancer for US general population (https://seer.canc\cr er.gov/statfacts/html/breast.html). Credible interval at a given age is the \eqn{0.025^{th}} and \eqn{0.0975^{th}} quantiles of the posterior distribution of penetrance estimate at that age.
+Posterior distributions are obtained via a Markov chain Monte Carlo algorithm. The default values for age distributions are based on the distribution of age of onset of breast cancer for US general population (https://seer.cancer.gov/statfacts/html/breast.html). Credible interval at a given age is the \eqn{0.025^{th}} and \eqn{0.0975^{th}} quantiles of the posterior distribution of penetrance estimate at that age.
 }
 \value{\code{BayesMetaPenetrance} returns a list of two objects
 \item{Ages}{Ages corresponding to the estimated penetrance values}
 \item{penetrance}{Estimated age-specific penetrance values}
 }
 \references{
-1. Ruberu, T. L. M, Braun, D, Parmigiani, G. and Biswas, S. Bayesian Meta-Analysis of Penetrance for Cancer Risk. (Manuscript) \cr
+1. Ruberu, T. L. M, Braun, D, Parmigiani, G. and Biswas, S. Bayesian Meta-Analysis of Penetrance for Cancer Risk (2023). \href{https://doi.org/10.48550/arXiv.2304.01912}{arXiv:2304.01912} [STAT.ME].
+\cr
 2. Marabelli, M., Cheng, S. C., and Parmigiani, G. (2016). Penetrance of ATM Gene Mutations in Breast Cancer: A Meta-Analysis of Different Measures of Risk. Genetic Epidemiology, 40, 425-431.
 }
 \author{
