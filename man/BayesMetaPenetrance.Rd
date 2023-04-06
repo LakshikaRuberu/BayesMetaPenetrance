@@ -3,11 +3,11 @@
 \alias{BayesMetapenetrance}
 \title{Estimates consensus age-specific penetrance of cancer for carriers of a pathogenic gene mutation}
 \description{
-\code{BayesMetaPenetrance} is used to estimate meta-analytic age-specific risk of getting cancer (penetrance) for carriers of pathogenic variants of a specific gene. Information from studies reporting different types of risk measuers on that gene (e.g., age-specific penetrance, relative risk(RR), standard incidence ratio (SIR), and odds ratio (OR)) are integrated to give the age-specific penetrance for carriers up to age 85.
+\code{BayesMetaPenetrance} is used to estimate meta-analytic age-specific risk of getting cancer (penetrance) for carriers of pathogenic variants of a specific gene. Information from studies reporting different types of risk measuers (these risk measures include age-specific penetrance, relative risk (RR), standard incidence ratio (SIR), and odds ratio (OR).) on that gene are integrated to give the age-specific penetrance for carriers up to age 85. In this package, SIR is treated in the same manner as RR under the assumption of rare disease.
 }
 \usage{
-BayesMetaPenetrance(penet,RR_studies=T,RR,OR_studies=T,OR,ages=seq(40,80,10),
-zero_studies=T,zero_OR,CrI=F,pl=T,ylim=c(0,1),xlim=c(40,80))
+BayesMetaPenetrance(penet,RR_studies=TRUE,RR,OR_studies=TRUE,OR,zero_studies=FALSE,zero_OR,
+ages=seq(40,80,10),n.iter=30000,n.burn=15000,CrI=FALSE,pl=FALSE,ylim=c(0,1),xlim=c(40,80))
 }
 \arguments{
   \item{penet}{
@@ -17,7 +17,7 @@ zero_studies=T,zero_OR,CrI=F,pl=T,ylim=c(0,1),xlim=c(40,80))
   \bold{\emph{penetrance}}\tab age-specific penetrance value. \cr
   \bold{\emph{penet_ci_lower}}\tab lower 95\% confidence limit. \cr
   \bold{\emph{penet_ci_upper}}\tab upper 95\% confidence limit. \cr
-  \bold{\emph{ages_penet}}\tab age at which penetrance is reported.
+  \bold{\emph{ages_penet}}\tab ages at which penetrance is reported.
   }
   }
    \item{RR_studies}{
@@ -52,14 +52,14 @@ zero_studies=T,zero_OR,CrI=F,pl=T,ylim=c(0,1),xlim=c(40,80))
   \bold{\emph{V}}\tab  sd of age of onset for cases. Default is 14.00726.\cr
   \bold{\emph{A.lo}}\tab minimum possible age of onset among cases. Default is 20.  \cr
   \bold{\emph{A.hi}}\tab maximum possible age of onset among cases. Default is 95.  \cr
-  \bold{\emph{A0}}\tab mean age of controls (at inlcusion in study). Default is value A.\cr
-  \bold{\emph{V0}}\tab sd of  age of controls (at inlcusion in study). Default is value V. \cr
-  \bold{\emph{A0.lo}}\tab minimum  possible age of controls (at inlcusion in study). Default is value A.lo.\cr
-  \bold{\emph{A0.hi}}\tab maximum  possible age of controls (at inlcusion in study). Default is value A.hi.
+  \bold{\emph{A0}}\tab mean age of controls (at inclusion in study). Default is value A.\cr
+  \bold{\emph{V0}}\tab sd of  age of controls (at inclusion in study). Default is value V. \cr
+  \bold{\emph{A0.lo}}\tab minimum  possible age of controls (at inclusion in study). Default is value A.lo.\cr
+  \bold{\emph{A0.hi}}\tab maximum  possible age of controls (at inclusion in study). Default is value A.hi.
    }
   }
   \item{zero_studies}{
-  A logical variable to indicate whether information from case control studies where no mutations were detected in controls are included in the meta analysis. These studies should not be included in \code{OR}. Default if TRUE.
+  A logical variable to indicate whether information from case control studies where no mutations were detected in controls are included in the meta analysis. These studies should not be included in \code{OR}. Default if FALSE.
   }
   \item{zero_OR}{
    If \code{zero_studies} is TRUE, a data frame containing information for such studies with following columns where each row corresponds to a single study
@@ -69,20 +69,26 @@ zero_studies=T,zero_OR,CrI=F,pl=T,ylim=c(0,1),xlim=c(40,80))
   \bold{\emph{non_carrier.controls}}\tab  number of non-carrier controls. \cr
  \bold{\emph{A.lo}}\tab minimum possible age of onset among cases. Default is 20.  \cr
   \bold{\emph{A.hi}}\tab maximum possible age of onset among cases. Default is 95.  \cr
-  \bold{\emph{A0}}\tab mean age of controls (at inlcusion in study). Default is value A.\cr
-  \bold{\emph{V0}}\tab sd of  age of controls (at inlcusion in study). Default is value V. \cr
-  \bold{\emph{A0.lo}}\tab minimum  possible age of controls (at inlcusion in study). Default is value A.lo.\cr
-  \bold{\emph{A0.hi}}\tab maximum  possible age of controls (at inlcusion in study). Default is value A.hi.
+  \bold{\emph{A0}}\tab mean age of controls (at inclusion in study). Default is value A.\cr
+  \bold{\emph{V0}}\tab sd of  age of controls (at inclusion in study). Default is value V. \cr
+  \bold{\emph{A0.lo}}\tab minimum  possible age of controls (at inclusion in study). Default is value A.lo.\cr
+  \bold{\emph{A0.hi}}\tab maximum  possible age of controls (at inclusion in study). Default is value A.hi.
    }
   }
   \item{ages}{
-  Ages at which penetrance values are required. Default is 40 to 80 years at increments of 10.
+  Ages at which penetrance values are required in the output. Default is 40 to 80 years at increments of 10.
+  }
+  \item{n.iter}{
+  Number of MCMC iterations to run. Default is 30000.
+  }
+  \item{n.burn}{
+  Number of MCMC iterations to burn-in. Default is 15000.
   }
   \item{CrI}{
   If CrI=TRUE, returns the 95\% credible intervals of the estimated age specific penetrance values. Default is FALSE.
   }
   \item{pl}{
-  If pl=TRUE, returns a plot of the estimated age specific penetrance value vs age along with 95\% credible intervals. Default is TRUE.
+  If pl=TRUE, returns a plot of the estimated age specific penetrance value vs age along with 95\% credible intervals. Default is FALSE.
   }
   \item{ylim}{
   If pl=TRUE, numeric vector of length 2, giving the y coordinates. Default is c(0,1).
@@ -97,12 +103,12 @@ in a specific gene, i.e., penetrance estimation. A meta-analysis approach based 
 studies reporting different types of risk measures (e.g., penetrance, relative risk, odds
 ratio, and standard incidence ratio) while accounting for associated uncertainties.
 
-The cumulative penetrance\eqn{F_s(t|\kappa_s,\lambda_s)} at age \eqn{t} for study \eqn{s} is assumed to be given by the c.d.f. of a Weibull distribution with shape parameter \eqn{\kappa_s} and scale parameter \eqn{\lambda_s}.
+The cumulative penetrance \eqn{F_s(t|\kappa_s,\lambda_s)} at age \eqn{t} for study \eqn{s} is assumed to be given by the c.d.f. of a Weibull distribution with shape parameter \eqn{\kappa_s} and scale parameter \eqn{\lambda_s}.
 
 
 The prior distributions are \eqn{\pi(\kappa_s|a, b) =} Gamma\eqn{(a, b), \;  \pi(\lambda_s|c, d) =} Gamma\eqn{(c, d),\;} where \eqn{a} and \eqn{c} are shape parameters and \eqn{b} and \eqn{d} are scale parameters.
 
-Continuous uniform distributions are assumed for all the hyper-parameters. Specifically, \eqn{\pi(a|l_a, u_a) =} U\eqn{(l_a, u_a), \; \pi(b|l_b, u_b) =} U\eqn{(l_b, u_b), \;  \pi(c|l_c, u_c) =} U\eqn{(l_c, u_c), \;} and \eqn{ \; \pi(d|l_d, u_d) =} U\eqn{(l_d, u_d)} with \eqn{l_a, u_a,l_a, u_a,l_a, u_a,l_a, u_a} pre-specified.
+Continuous uniform distributions are assumed for all the hyper-parameters. Specifically, \eqn{\pi(a|l_a, u_a) =} U\eqn{(l_a, u_a), \; \pi(b|l_b, u_b) =} U\eqn{(l_b, u_b), \;  \pi(c|l_c, u_c) =} U\eqn{(l_c, u_c), \;} and \eqn{ \; \pi(d|l_d, u_d) =} U\eqn{(l_d, u_d)} with \eqn{l_a, u_a,l_b, u_b,l_c, u_c,l_d, u_d} pre-specified.
 
 Posterior distributions are obtained via a Markov chain Monte Carlo algorithm. The default values for age distributions are based on the distribution of age of onset of breast cancer for US general population (https://seer.cancer.gov/statfacts/html/breast.html). Credible interval at a given age is the \eqn{0.025^{th}} and \eqn{0.0975^{th}} quantiles of the posterior distribution of penetrance estimate at that age.
 }
@@ -119,6 +125,7 @@ Posterior distributions are obtained via a Markov chain Monte Carlo algorithm. T
 Thanthirige Lakshika Maduwanthi Ruberu, Swati Biswas
 }
 \examples{
+
 #penetrance value
 set.seed(123)
 
@@ -213,8 +220,12 @@ colnames(zero_OR)=c("carrier.cases","non_carrier.cases","non_carrier.controls",
           "A","V","A.lo","A.hi","A0","V0","A0.lo","A0.hi")
 
 
-BayesMetaPenetrance(penet,RR_studies=T,RR=RR,OR_studies=T,OR=OR,ages=seq(40,80,10),
-zero_studies=T,zero_OR=zero_OR,CrI=F,pl=T,ylim=c(0,1),xlim=c(40,80))
+#The following example command uses a very small number of MCMC iterations
+#to allow a quick initial check of the code but for actual analysis, it is recommended
+#to use the default number of iterations and burn-in.
+
+BayesMetaPenetrance(penet,RR_studies=TRUE,RR=RR,OR_studies=TRUE,OR=OR,zero_studies=TRUE,
+zero_OR=zero_OR,ages=seq(40,80,10),n.iter=1000,n.burn=100,CrI=FALSE,pl=FALSE)
 }
 
 
