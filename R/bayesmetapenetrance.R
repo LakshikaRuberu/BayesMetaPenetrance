@@ -1,6 +1,6 @@
 
 ###function to carry out bayes meta analysis
-BayesMetaPenetrance<-function( penet ,  RR_studies=T, RR ,OR_studies=T, OR , ages=seq(40,80,10), zero_studies=T, zero_OR ,CrI=F,pl=T ,ylim=c(0,1),xlim=c(40,80))
+BayesMetaPenetrance<-function(penet, RR_studies=TRUE, RR, OR_studies=TRUE, OR, zero_studies=FALSE, zero_OR, ages=seq(40,80,10), n.iter=30000, n.burn=15000, CrI=FALSE, pl=FALSE ,ylim=c(0,1), xlim=c(40,80))
 {
 
  if(max(ages)>85)
@@ -1177,8 +1177,8 @@ BayesMetaPenetrance<-function( penet ,  RR_studies=T, RR ,OR_studies=T, OR , age
 
 
   #Specification of no of iterations and burn in
-  n.iter=30000
-  n.burn=15000
+  n.iter=n.iter
+  n.burn=n.burn
 
   #kappa and lambda of approximated weibull curve for non carriers
   kappa0=3.65
